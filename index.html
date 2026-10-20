@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>Justin Bourdlaies, Aditi Singh, Gor Abaghyan, Tigran Zhamakochyan</strong> — <em>jbourdlaies@ucsd.edu, ads010@ucsd.edu, gabaghyan@ucsd.edu, tzhamakochyan@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: The Earth is in the midst of a long term warming trend as a result of human activity</h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="vis_a.png" alt="Annual Global Temperature Anomalies from 1960-2025 Relative to 1950-1980" style="max-width: 100%; height: auto;" />
+                    <figcaption>This is a visualization which supports the argument that the Earth is in a long term warming phase by demonstrating the increasing temperature anomalies over time.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>Average Across Available Countries (Earnest, +1.5): We used the average temperature anomalies across the available countries to represent the broader warming trend rather than looking at individual countries. This makes the graphic far more persuasive in terms of the general warming trend over the decades. It does of course mean that we're not quite representing the global temperature in the most accurate way as the countries are of vastly different sizes. We did consider the option of showing the individual countries but in the end the averaging was far more effective in terms of showing the pattern.</li>
+                    <li>Linear Trend Line (Fully Earnest, +2): We've added a dashed linear trend line to highlight the general increase in the temperature anomalies from 1960 to 2025. That makes the long term warming trend much easier to see given the year to year variation. The trend line is of course a simplification of the actual data, but it does a good job of showing the general direction of the trend. We did consider just using the original temperature line, but the added trend line is far clearer.</li>
+                    <li>Baseline Average (1950-1980) (Fully Earnest, +2): We've included a horizontal reference line representing the 1950-1980 baseline average so that the temperature anomalies can be compared against a consistent baseline. This makes the warming trend far more compelling as the reader can see quite clearly how the temperature anomalies have moved well above the baseline. We did consider omitting the reference line but it's clearly useful in providing context to the anomalies.</li>
+                    <li>Temperature Difference Instead of Absolute Temperature (Earnest, +1.5): We presented the temperature anomalies in degrees C rather than absolute temperatures as we wanted to highlight the changes from the baseline. The anomaly makes the relatively small but real differences in temperature much more obvious. Absolute temperatures may be more familiar to the reader but the anomaly is the better way of showing long term change and allows for comparison between different regions.</li>
+                </ul>
+
+                <figure>
+                    <img src="vis_b.png" alt="Atmospheric CO2 Concentration (1960-2025)" style="max-width: 100%; height: auto;" />
+                    <figcaption>This graph is there to support the argument that the rise in greenhouse gases is in line with human-induced climate change, by showing the long-term increase in atmospheric CO2.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>CO2 Concentration as the Main Variable (Earnest, +1.5): We went with atmospheric CO2 concentration as the measure as CO2 is a key greenhouse gas in relation to global warming. The chart is very clear in terms of the rise in CO2 levels over time and is therefore very persuasive in the context of climate change. CO2 concentration by itself however doesn't prove that human activity has been the cause of the rise nor does it prove that it has had an effect on temperature. We did consider including a number of other climate indicators but in the end the simplicity of the chart with just CO2 was preferable.</li>
+                    <li>Green Line (Earnest, +1): We've used a green line to represent CO2 concentration as green is the colour most associated with the environment/climate. It's a fairly straightforward stylistic decision which reinforces the environmental theme and makes the chart more visually palatable. We did consider using a more neutral colour (blue or black) but green is the one that works best in terms of the theme without in any way affecting the way the data is presented.</li>
+                    <li>Grid Lines (Fully Earnest, +2): We've included the light grid lines to assist the reader in matching up the CO2 concentration values with the y axis and in seeing the trend over time. It improves the readability and makes the upward trend much easier to see. We did consider removing them for a cleaner look but they do provide useful reference points without in any way detracting from the data.</li>
+                    <li>Continuous Time-Series Line (Earnest, +1.5): We used a continuous line chart to show the change in atmospheric CO2 from 1960 to 2025. That enables the long term upward trend as well as the smaller periodic variations to be seen and reinforces the point that CO2 has been rising continuously. We did consider a bar chart but the line chart is far better at showing the continuous nature of the change over time.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img src="vis_c.png" alt="Annual Temperature Anomalies with Specific Timeframes Highlighted" style="max-width: 100%; height: auto;" />
+                    <figcaption>This graph demonstrates that despite the long-term increase in global temperatures, there are certain shorter timeframes where temperatures actually decrease or remain relatively stable. This supports our claim that short-term climate fluctuations can differ significantly from long-term trends, making short-term observations potentially misleading when evaluating global warming.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>Average Temperatures Across Countries (Earnest, +1.5): We have calculated the average temperature anomalies across the countries to arrive at an overall representative measure of temperature trends across years. This allows us to highlight the differences between years and observe the broader pattern of global warming. One limitation of this approach is that countries differ in geographic size, meaning that an unweighted average may not perfectly represent global temperature trends. Additionally, certain countries may experience more extreme temperature fluctuations than others, potentially affecting the overall average.</li>
+                    <li>Line Chart Showing Temperature Changes Across Years (Fully Earnest, +2): We have created a line chart demonstrating temperature anomalies across the years. In the long-term picture, we can clearly observe an overall increase in temperatures, so we believe this is an earnest representation of the underlying data and patterns. Years are represented on the X-axis, while the Y-axis contains temperature anomalies in °C compared to the 1951-1980 baseline, connected through a continuous line. This design allows viewers to observe both short-term fluctuations and the overall warming trend without hiding any particular years.</li>
+                    <li>Highlighted Areas on Line Graph (Deceptive, -1): We have highlighted certain timeframes within the entire line graph to focus the viewers' attention on periods where temperatures decrease instead of increasing, also illustrating these periods with downward-sloping trend lines. In reality, the overall long-term trend shows increasing temperatures, but through this technique we deliberately concentrate the readers' attention on selected periods that support our claim. We believe this to be a somewhat deceptive technique because it involves selectively emphasizing short-term cooling periods, potentially creating the impression that global warming is less consistent than it actually is. However, viewers still have the ability to examine the entire graph and recognize that the highlighted timeframes do not represent the broader long-term trend.</li>
+                </ul>
+
+                <figure>
+                    <img src="vis_d.png" alt="Global warming trendline" style="max-width: 100%; height: auto;" />
+                    <figcaption>This graph demonstrates that while atmospheric CO2 levels consistently increase every year, annual temperature changes fluctuate between positive and negative values. This supports our claim that short-term climate data alone is insufficient to establish a direct causal relationship between human activity and observed temperature changes.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>Comparing Annual CO2 and Temperature Changes (Fully Earnest, +2): We have compared the annual changes in atmospheric CO2 concentrations and global temperature across the same timeframe to highlight the differences in their short-term patterns. Instead of presenting their absolute values, we used year-to-year changes to demonstrate how consistently CO2 levels increase while temperatures fluctuate. This allows viewers to observe that the two variables do not necessarily move in the same direction every year. However, annual fluctuations alone cannot determine whether CO2 contributes to long-term warming.</li>
+                    <li>Two Separate Bar Charts with Consistent Timeframes (Fully Earnest, +2): We have created two vertically aligned bar charts representing annual CO2 increases and temperature changes over the same years. The X-axis represents years for both graphs, while the Y-axis shows CO2 increases in ppm per year and temperature changes in °C per year, respectively. We chose separate charts because the variables have different units and scales, making a combined visualization less straightforward to interpret. Additionally, we used contrasting colors for positive and negative temperature changes, allowing viewers to easily distinguish warming and cooling years. This design provides a relatively clear and accurate representation of the annual variations in both variables.</li>
+                    <li>Emphasizing the Number of Years with Positive Changes (Deceptive, -1): We have added bold statements above each chart highlighting that CO₂ increased in all 63 years, while temperature increased in only 34. This deliberately directs the viewer's attention toward the apparent inconsistency between the two variables, making their relationship seem weaker than it might actually be. While these numbers accurately represent the annual changes in our dataset, comparing the frequency of yearly increases can be misleading because CO₂'s warming effect is primarily reflected in long-term temperature trends rather than consistent year-to-year warming. We believe this is a somewhat deceptive technique, as it emphasizes short-term differences without providing the full context of their long-term relationship.</li>
+                    <li>Focusing on Annual Changes Rather Than Long-Term Trends (Deceptive, -1): By visualizing year-to-year changes instead of absolute CO₂ concentrations and temperature anomalies, we shift the viewer's focus away from their broader long-term upward trends. This makes the relationship between CO₂ and temperature appear less consistent, especially because natural variability can cause temperatures to decrease in individual years despite increasing greenhouse gas concentrations. Although the data itself is represented accurately, this design decision can lead viewers to underestimate the strength of the long-term relationship. We believe this introduces a degree of deception through the choice of timeframe and measurement, while still allowing viewers to examine the actual annual fluctuations.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <p>
+                    The visualisations helped us to see how design choices can affect the way the reader interprets the data. The obvious one was that temperature anomalies and CO2 concentrations were both clearly rising over the long term, even though annual temperature changes fluctuated significantly. The more difficult part was working out what design elements would make certain patterns persuasive without distorting the data. Highlighting specific cooling periods with trend lines made short-term temperature decreases much more noticeable, while comparing annual CO2 and temperature changes emphasized how differently the two variables behave over shorter periods. We were quite surprised at the impact that such simple decisions as colour, the choice of timeframe, and the way the data was aggregated could have on the message of a visualisation.
+                </p>
+
+                <p>
+                    Another key insight was that persuasive visualisations don't necessarily have to be misleading, but even accurate data can be presented in ways that influence interpretation. For example, highlighting selected cooling periods while keeping the overall warming trend visible can draw attention away from the bigger picture. Similarly, emphasizing that CO2 increased in all 63 years while temperatures increased in only 34 can make their relationship appear weaker than it actually is. These observations don't disprove the relationship between CO2 and global warming, but illustrate how short-term fluctuations can be used to support a particular argument. Likewise, averaging temperature anomalies across countries produces a much simpler picture, but can mask differences at the country level. These examples were a good reminder that even sensible design choices involve a compromise between clarity, accuracy and persuasion.
+                </p>
+
+                <p>
+                    We define ethical analysis and visualisation as presenting the data in an accurate, transparent and understandable way, whilst being aware of the relevant limitations. We feel that it is acceptable to make a persuasive choice as long as it is presenting a real pattern and not hiding information which would materially alter the reader's interpretation. Where choices become misleading is when they selectively emphasize certain timeframes, exaggerate short-term differences, or imply conclusions that the data does not actually support. In the end, this project has helped us to see that ethical visualisation is about striking a balance between a persuasive presentation and an honest presentation of the data.
+                </p>
+
+            </section>
+        </main>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
